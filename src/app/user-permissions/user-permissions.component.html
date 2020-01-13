@@ -1,0 +1,18 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        User Permissions
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let prms of currUser.userPrms">
+          <mat-checkbox (change)="clickCheckbox(prms.name)" [checked]="prms.value">
+            {{prms.name}}
+          </mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+

@@ -1,0 +1,59 @@
+<div class="user-profile">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          User Profile
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+      <form class="card" [formGroup]="form" (ngSubmit)="addUser()">
+        <div>
+
+        <div class="nameEmail">
+          <div class="form-group">
+            <input id="name" placeholder="Login Name" formControlName="name"
+                   [value]="currUser ? currUser.name || '' : newUser.name"
+            />
+          </div>
+          <div class="form-group">
+            <input type="any" placeholder="Email" formControlName="email"
+              [value]="currUser ? currUser.email || '' : newUser.email"
+            />
+          </div>
+        </div>
+
+          <div class="password">
+          <div class="form-group">
+            <input type="any" placeholder="Password" formControlName="password"
+              [value]="currUser ? currUser.password || '' : newUser.password"
+            />
+          </div>
+          <div class="form-group">
+            <input type="any" placeholder="Confirm password" formControlName="confirmPassword"
+              [value]="currUser ? currUser.confirmPassword || '' : newUser.confirmPassword"
+            />
+          </div>
+          </div>
+          <div class="form-group">
+
+              <ng-container>
+              <button class="btn" type="submit" [disabled]="form.invalid">Add User</button>
+            </ng-container>
+
+              <ng-container>
+                <button class="btn" type="submit" (click)="clear()">Clear</button>
+              </ng-container>
+
+          </div>
+        </div>
+      </form>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+<app-user-permissions class="user-permissions" [currUser]="currUser || newUser"></app-user-permissions>
+<app-effective-permissions class="effective-permissions" [currGroup]="currGroup || newGroup"></app-effective-permissions>
+  <app-group-memberships class="group-memberships"></app-group-memberships>
+</div>
+
+

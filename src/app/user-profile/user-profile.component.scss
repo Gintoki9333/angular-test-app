@@ -1,0 +1,66 @@
+p {
+  font-size: 1.5rem;
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.user-profile {
+  display: grid;
+  background-color: #DCDCDC;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.user-permissions {
+
+}
+
+.effective-permissions{
+
+}
+
+.group-memberships {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.nameEmail{
+  input{
+    position: relative;
+    max-width: 96%;
+    background-color: #DCDCDC;
+  }
+}
+
+.password{
+  position: relative;
+  display: flex;
+  input{
+    justify-content: space-around;
+    width: 92%;
+  }
+}
+

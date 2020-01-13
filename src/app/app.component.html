@@ -1,0 +1,9 @@
+<app-top-panel class="top-panel" [currUser] = "selectedUser" [currGroup]="selectedGroup"></app-top-panel>
+<div class="flex-container">
+  <app-users-and-groups class="users-and-groups" (onSelectedUser)="handlerUser($event)" (onSelectedGroup)="handlerGroup($event)"></app-users-and-groups>
+  <app-user-profile class="user-profile" [currUser] = "selectedUser" [currGroup]="selectedGroup"></app-user-profile>
+</div>
+
+
+
+

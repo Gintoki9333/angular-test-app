@@ -1,0 +1,20 @@
+.flex-container {
+  display: flex;
+}
+.users-and-groups {
+  flex: 2;
+}
+.user-profile {
+  flex: 2;
+}
+
+
+
+@media all and (min-width: 600px) {
+  .users-and-groups { flex: 1 auto; }
+}
+@media all and (min-width: 800px) {
+  .user-profile   { flex: 3 0px; }
+  .users-and-groups { order: 1; }
+  .user-profile   { order: 2; }
+}

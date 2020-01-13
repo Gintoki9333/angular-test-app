@@ -1,0 +1,16 @@
+<div class="group-memberships">
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Group Memberships
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item *ngFor="let group of groups">
+            {{group.name}}
+        </mat-list-item>
+      </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>

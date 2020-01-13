@@ -1,0 +1,32 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Local Users
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-action-list>
+        <mat-list-item *ngFor="let user of users" (click)="setSelectedUser(user)">
+            {{ user.name }}
+        </mat-list-item>
+      </mat-action-list>
+    </mat-expansion-panel>
+</mat-accordion>
+
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Local Groups
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-action-list>
+        <mat-list-item *ngFor="let group of groups" (click)="setSelectedGroup(group)">
+            {{ group.name }}
+        </mat-list-item>
+      </mat-action-list>
+      </mat-expansion-panel>
+    </mat-accordion>

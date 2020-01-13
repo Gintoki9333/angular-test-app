@@ -1,0 +1,19 @@
+<div class="top-panel">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Add Group">
+      <ng-template ngbPanelContent>
+      <form class="card" [formGroup] = "form" (ngSubmit)="addGroup()">
+        <div>
+          <div class="form-group">
+            <input  placeholder="Name" formControlName="name"/>
+          </div>
+          <div class="form-group">
+            <button class="btn" type="submit" [disabled]="form.invalid">Add Group</button>
+          </div>
+        </div>
+      </form>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  <button class="btn" id="btnDelete" (click)="delete()">Delete</button>
+</div>

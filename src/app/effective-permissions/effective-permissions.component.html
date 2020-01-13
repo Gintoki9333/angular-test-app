@@ -1,0 +1,18 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Effective Permissions
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let effectivePerr of currGroup.effectivePrms">
+          <mat-checkbox (change)="clickCheckbox(effectivePerr.name)" [checked]="effectivePerr.value">
+           {{effectivePerr.name}}
+          </mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+
+  </mat-expansion-panel>
+</mat-accordion>
