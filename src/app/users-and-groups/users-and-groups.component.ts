@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 import {users, User} from "../users";
 import {Group, groups} from '../groups';
 
@@ -7,7 +7,7 @@ import {Group, groups} from '../groups';
   templateUrl: "./users-and-groups.component.html",
   styleUrls: ["./users-and-groups.component.scss"]
 })
-export class UsersAndGroupsComponent implements OnInit {
+export class UsersAndGroupsComponent {
 
   users = users;
   groups = groups;
@@ -26,8 +26,4 @@ export class UsersAndGroupsComponent implements OnInit {
     this.selectedGroup = group;
     this.onSelectedGroup.emit(this.selectedGroup);
   }
-
-  constructor() {}
-
-  ngOnInit() {}
 }

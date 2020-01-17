@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input} from "@angular/core";
 import { User } from "../users";
 
 @Component({
@@ -6,7 +6,7 @@ import { User } from "../users";
   templateUrl: "./user-permissions.component.html",
   styleUrls: ["./user-permissions.component.scss"]
 })
-export class UserPermissionsComponent implements OnInit {
+export class UserPermissionsComponent{
   @Input() currUser: User;
 
   constructor() {}
@@ -15,6 +15,4 @@ export class UserPermissionsComponent implements OnInit {
     const u = this.currUser.userPrms.find(e => e.name === name);
     u.value = !u.value;
   }
-
-  ngOnInit() {}
 }

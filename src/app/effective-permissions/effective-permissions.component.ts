@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Group} from '../groups';
 
 @Component({
@@ -6,7 +6,7 @@ import {Group} from '../groups';
   templateUrl: './effective-permissions.component.html',
   styleUrls: ['./effective-permissions.component.scss']
 })
-export class EffectivePermissionsComponent implements OnInit {
+export class EffectivePermissionsComponent {
 
   @Input() currGroup: Group;
 
@@ -16,6 +16,4 @@ export class EffectivePermissionsComponent implements OnInit {
     const g = this.currGroup.effectivePrms.find(e => e.name === name);
     g.value = !g.value;
   }
-
-  ngOnInit() {}
 }

@@ -1,17 +1,20 @@
+import {Group, groups} from './groups';
+
 export class User {
   constructor(
     public name: string,
     public email?: any,
     public password?: any,
     public confirmPassword?: any,
-    public groups?: any[],
+    public groupMemb?: Group[],
     public userPrms?: any[]
   ) {
     this.name = name;
     this.email = email;
     this.password = password;
     this.confirmPassword = confirmPassword;
-    this.groups = groups;
+    this.groupMemb = groups;
+    console.log(this.groupMemb);
     this.userPrms = [
       { name: 'View Dashboards', value: false },
       { name: 'Edit Dashboards', value: false },
@@ -33,7 +36,7 @@ export function addNewUser(data: User) {
     email: data.email,
     password: data.password,
     confirmPassword: data.confirmPassword,
-    groups: data.groups,
+    groupMemb: data.groupMemb,
     userPrms: data.userPrms = [
       { name: 'View Dashboards', value: false },
       { name: 'Edit Dashboards', value: false },

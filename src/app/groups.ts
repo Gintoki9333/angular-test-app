@@ -1,5 +1,3 @@
-import {users} from './users';
-
 export class Group {
   constructor(
     public name: string,

@@ -34,9 +34,6 @@ export class TopPanelComponent implements OnInit {
     }
   }
 
-  constructor() {
-  }
-
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl('',

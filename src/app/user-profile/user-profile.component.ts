@@ -34,8 +34,6 @@ export class UserProfileComponent implements OnInit {
       this.form.reset();
     }
 
-  constructor() {
-  }
 
   ngOnInit() {
     this.form = new FormGroup({
