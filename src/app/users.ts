@@ -14,7 +14,6 @@ export class User {
     this.password = password;
     this.confirmPassword = confirmPassword;
     this.groupMemb = groups;
-    console.log(this.groupMemb);
     this.userPrms = [
       { name: 'View Dashboards', value: false },
       { name: 'Edit Dashboards', value: false },
@@ -24,37 +23,30 @@ export class User {
   }
 }
 
-export let users: User[] = [
-  new User('John', 'John95@mail.ru', 'qwerty123', 'qwerty123'),
-  new User('User', 'user@mail.ru'),
-  new User('Admin', 'admin@mail.ru')
-];
-
-export function addNewUser(data: User) {
-  users.push({
-    name: data.name,
-    email: data.email,
-    password: data.password,
-    confirmPassword: data.confirmPassword,
-    groupMemb: data.groupMemb,
-    userPrms: data.userPrms = [
-      { name: 'View Dashboards', value: false },
-      { name: 'Edit Dashboards', value: false },
-      { name: 'Manage Datasources', value: false },
-      { name: 'Manage Users', value: false }
-    ]
-  });
-}
-
-// export function changeUser(user) {
-//   Object.assign(
-//     users.find(e => e.name === user.name),
-//     user
-//   );
+// export let users: User[] = [
+//   new User('John', 'John95@mail.ru', 'qwerty123', 'qwerty123'),
+//   new User('User', 'user@mail.ru'),
+//   new User('Admin', 'admin@mail.ru')
+// ];
+//
+// export function addNewUser(data: User) {
+//   users.push({
+//     name: data.name,
+//     email: data.email,
+//     password: data.password,
+//     confirmPassword: data.confirmPassword,
+//     groupMemb: data.groupMemb,
+//     userPrms: data.userPrms = [
+//       { name: 'View Dashboards', value: false },
+//       { name: 'Edit Dashboards', value: false },
+//       { name: 'Manage Datasources', value: false },
+//       { name: 'Manage Users', value: false }
+//     ]
+//   });
 // }
-
-export function deleteUser(deleteUserName) {
-  users = users.filter(e => e.name !== deleteUserName);
-  console.log(users);
-}
+//
+// export function deleteUser(deleteUserName) {
+//   users = users.filter(e => e.name !== deleteUserName);
+//   console.log(users);
+// }
 

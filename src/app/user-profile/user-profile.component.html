@@ -53,7 +53,7 @@
   </mat-accordion>
 <app-user-permissions class="user-permissions" [currUser]="currUser || newUser"></app-user-permissions>
 <app-effective-permissions class="effective-permissions" [currGroup]="currGroup || newGroup"></app-effective-permissions>
-  <app-group-memberships class="group-memberships"></app-group-memberships>
+<app-group-memberships class="group-memberships" [currUser]="currUser || newUser"></app-group-memberships>
 </div>
 
 

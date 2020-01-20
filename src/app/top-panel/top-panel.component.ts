@@ -1,7 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {addNewGroup, Group, deleteGroup} from '../groups';
-import {User, deleteUser} from '../users';
+import {User,
+  // deleteUser
+} from '../users';
+import {AppUsersService} from '../users.service';
 
 @Component({
   selector: 'app-top-panel',
@@ -9,6 +12,8 @@ import {User, deleteUser} from '../users';
   styleUrls: ['./top-panel.component.scss']
 })
 export class TopPanelComponent implements OnInit {
+
+  constructor(public appUsersService: AppUsersService) {}
 
   form: FormGroup;
   @Input() currGroup: Group;
@@ -26,11 +31,9 @@ export class TopPanelComponent implements OnInit {
 
   delete() {
     if (this.currUser.name) {
-      deleteUser(this.currUser.name);
-      console.log(deleteUser(this.currUser));
+      this.appUsersService.deleteUser(this.currUser.name);
     } else if (this.currGroup.name) {
       deleteGroup(this.currGroup.name);
-      console.log(deleteGroup(this.currGroup));
     }
   }
 

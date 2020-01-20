@@ -8,11 +8,10 @@ import {User} from '../users';
 })
 export class GroupMembershipsComponent {
 
-  @Input() currUser = User;
+  @Input() currUser: User;
 
-  // clickCheckbox(name) {
-  //   const g = this.currUser.groupMemb.find<User>(e => e.name === name);
-  //   g.value = !g.value;
-  // }
-
+  clickCheckbox(name) {
+    const g = this.currUser.groupMemb.find(e => e.name === name);
+    // g.value = !g.value;
+  }
 }

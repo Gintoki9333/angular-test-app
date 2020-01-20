@@ -1,15 +1,20 @@
 import {Component, Output, EventEmitter} from '@angular/core';
-import {users, User} from "../users";
+import {User,
+  // users
+} from '../users';
 import {Group, groups} from '../groups';
+import {AppUsersService} from '../users.service';
 
 @Component({
-  selector: "app-users-and-groups",
-  templateUrl: "./users-and-groups.component.html",
-  styleUrls: ["./users-and-groups.component.scss"]
+  selector: 'app-users-and-groups',
+  templateUrl: './users-and-groups.component.html',
+  styleUrls: ['./users-and-groups.component.scss']
 })
 export class UsersAndGroupsComponent {
 
-  users = users;
+  constructor(public appUsersService: AppUsersService) {}
+
+  users = this.appUsersService.users;
   groups = groups;
   @Output() onSelectedUser = new EventEmitter();
   selectedUser: User;
@@ -22,7 +27,7 @@ export class UsersAndGroupsComponent {
     this.onSelectedUser.emit(this.selectedUser);
   }
 
-  setSelectedGroup(group){
+  setSelectedGroup(group) {
     this.selectedGroup = group;
     this.onSelectedGroup.emit(this.selectedGroup);
   }

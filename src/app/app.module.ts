@@ -53,6 +53,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import {AppUsersService} from './users.service';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,9 @@ import {MatTreeModule} from '@angular/material/tree';
     PortalModule,
     ScrollingModule
   ],
-  providers: [],
+  providers: [
+    AppUsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

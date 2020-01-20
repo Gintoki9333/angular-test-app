@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { addNewUser} from '../users';
+// import {addNewUser} from '../users';
+import {AppUsersService} from '../users.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User} from '../users';
 import { Group } from '../groups';
@@ -10,6 +11,8 @@ import { Group } from '../groups';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+
+  constructor(public appUsersService: AppUsersService) {}
 
   form: FormGroup;
 
@@ -25,7 +28,7 @@ export class UserProfileComponent implements OnInit {
       const formData = { ...this.form.value };
       console.log('Form Data: ', formData);
       if (!this.currUser) {
-        addNewUser(formData);
+        this.appUsersService.addNewUser(formData);
       }
     }
   }
@@ -33,7 +36,6 @@ export class UserProfileComponent implements OnInit {
   clear() {
       this.form.reset();
     }
-
 
   ngOnInit() {
     this.form = new FormGroup({
