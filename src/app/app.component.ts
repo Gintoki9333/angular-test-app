@@ -38,3 +38,7 @@ export class AppComponent {
     console.log('selected group', groupValue);
   }
 }
+
+// handlerDelete( ){
+//   this.
+// }

@@ -21,7 +21,6 @@ export class UserProfileComponent implements OnInit {
   @Input() currGroup: Group;
   newGroup: Group = new Group(null);
 
-
   addUser() {
     if (this.form.valid) {
       console.log('Form: ', this.form);

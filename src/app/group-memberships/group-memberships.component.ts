@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {User} from '../users';
+import {groups} from '../groups';
 
 @Component({
   selector: 'app-group-memberships',
@@ -7,6 +8,8 @@ import {User} from '../users';
   styleUrls: ['./group-memberships.component.scss']
 })
 export class GroupMembershipsComponent {
+
+  newGroups = Object.assign({}, groups);
 
   @Input() currUser: User;
 

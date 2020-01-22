@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {addNewGroup, Group, deleteGroup} from '../groups';
+import {Group, addNewGroup, deleteGroup} from '../groups';
 import {User,
   // deleteUser
 } from '../users';
@@ -18,6 +18,7 @@ export class TopPanelComponent implements OnInit {
   form: FormGroup;
   @Input() currGroup: Group;
   @Input() currUser: User;
+  @Output() onDelete = new EventEmitter();
 
   addGroup() {
     if (this.form.valid) {
@@ -32,9 +33,12 @@ export class TopPanelComponent implements OnInit {
   delete() {
     if (this.currUser.name) {
       this.appUsersService.deleteUser(this.currUser.name);
+      this.currUser = null;
     } else if (this.currGroup.name) {
       deleteGroup(this.currGroup.name);
+      this.currUser = null;
     }
+    this.onDelete.emit(this.delete);
   }
 
   ngOnInit() {
