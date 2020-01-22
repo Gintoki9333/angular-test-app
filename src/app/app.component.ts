@@ -39,6 +39,3 @@ export class AppComponent {
   }
 }
 
-// handlerDelete( ){
-//   this.
-// }
