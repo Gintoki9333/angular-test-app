@@ -35,3 +35,5 @@ export function deleteGroup(deleteGroupName) {
   console.log(this.groups);
   console.log(deleteGroupName);
 }
+
+

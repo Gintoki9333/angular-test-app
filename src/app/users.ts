@@ -1,4 +1,4 @@
-import {Group, groups} from './groups';
+import {groups} from './groups';
 
 export class User {
   constructor(
@@ -6,14 +6,15 @@ export class User {
     public email?: any,
     public password?: any,
     public confirmPassword?: any,
-    public groupMemb?: Group[],
+    public groupMemb?: any[],
     public userPrms?: any[]
   ) {
     this.name = name;
     this.email = email;
     this.password = password;
     this.confirmPassword = confirmPassword;
-    this.groupMemb = groups;
+    const newGroups = groups.map(e => Object.assign({value: false}, e));
+    this.groupMemb = newGroups;
     this.userPrms = [
       { name: 'View Dashboards', value: false },
       { name: 'Edit Dashboards', value: false },

@@ -9,12 +9,10 @@ import {groups} from '../groups';
 })
 export class GroupMembershipsComponent {
 
-  newGroups = Object.assign({}, groups);
-
   @Input() currUser: User;
 
   clickCheckbox(name) {
     const g = this.currUser.groupMemb.find(e => e.name === name);
-    // g.value = !g.value;
+    g.value = !g.value;
   }
 }
