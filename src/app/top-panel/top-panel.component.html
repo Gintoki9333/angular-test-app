@@ -5,7 +5,7 @@
       <form class="card" [formGroup] = "form" (ngSubmit)="addGroup()">
         <div>
           <div class="form-group">
-            <input  placeholder="Name" formControlName="name"/>
+            <input placeholder="Name" formControlName="name"/>
           </div>
           <div class="form-group">
             <button class="btn" type="submit" [disabled]="form.invalid">Add Group</button>

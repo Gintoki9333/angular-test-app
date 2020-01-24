@@ -31,10 +31,10 @@ export class TopPanelComponent implements OnInit {
   }
 
   delete() {
-    if (this.currUser.name) {
+    if (this.currUser && this.currUser.name) {
       this.appUsersService.deleteUser(this.currUser.name);
       this.currUser = null;
-    } else if (this.currGroup.name) {
+    } else if (this.currGroup && this.currGroup.name) {
       deleteGroup(this.currGroup.name);
       this.currGroup = null;
     }

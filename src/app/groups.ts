@@ -30,9 +30,9 @@ export function addNewGroup(data: Group) {
 }
 
 export function deleteGroup(deleteGroupName) {
-  deleteGroupName = this.groups.findIndex(e => e.name === deleteGroupName);
-  this.groups.splice(deleteGroupName, 1);
-  console.log(this.groups);
+  deleteGroupName = groups.findIndex(e => e.name === deleteGroupName);
+  groups.splice(deleteGroupName, 1);
+  console.log(groups);
   console.log(deleteGroupName);
 }
 
