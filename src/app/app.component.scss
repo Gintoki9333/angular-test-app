@@ -14,7 +14,7 @@
   .users-and-groups { flex: 1 auto; }
 }
 @media all and (min-width: 800px) {
-  .user-profile   { flex: 3 0px; }
+  .user-profile   { flex: 3 0; }
   .users-and-groups { order: 1; }
   .user-profile   { order: 2; }
 }

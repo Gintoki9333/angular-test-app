@@ -28,6 +28,7 @@ export class UsersAndGroupsComponent {
   }
 
   setSelectedGroup(group) {
+    console.log('get group', group);
     this.selectedGroup = group;
     this.onSelectedGroup.emit(this.selectedGroup);
   }

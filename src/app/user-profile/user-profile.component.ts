@@ -26,9 +26,8 @@ export class UserProfileComponent implements OnInit {
       console.log('Form: ', this.form);
       const formData = { ...this.form.value };
       console.log('Form Data: ', formData);
-      if (!this.currUser) {
-        this.appUsersService.addNewUser(formData);
-      }
+      this.appUsersService.addNewUser(formData);
+      this.form.reset();
     }
   }
 

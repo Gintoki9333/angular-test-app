@@ -1,4 +1,4 @@
-import {Injectable, Input} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {User} from './users';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class AppUsersService {
   ];
 
   public addNewUser(data: User) {
-      // написать find()
+
       this.users.push({
         name: data.name,
         email: data.email,
