@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersAndGroupsComponent } from './users-and-groups/users-and-groups.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserPermissionsComponent } from './user-permissions/user-permissions.component';
@@ -54,16 +53,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {AppUsersService} from './users.service';
+import { LocalUsersComponent } from './local-users/local-users.component';
+import { LocalGroupsComponent } from './local-groups/local-groups.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersAndGroupsComponent,
     UserProfileComponent,
     UserPermissionsComponent,
     EffectivePermissionsComponent,
     TopPanelComponent,
-    GroupMembershipsComponent
+    GroupMembershipsComponent,
+    LocalUsersComponent,
+    LocalGroupsComponent
   ],
   imports: [
     BrowserModule,
