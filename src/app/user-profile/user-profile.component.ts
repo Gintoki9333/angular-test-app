@@ -1,5 +1,4 @@
 import { Component, OnInit, Input} from '@angular/core';
-// import {addNewUser} from '../users';
 import {AppUsersService} from '../users.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User} from '../users';

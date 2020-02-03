@@ -14,7 +14,6 @@ export class AppUsersService {
   ];
 
   public addNewUser(data: User) {
-
       this.users.push({
         name: data.name,
         email: data.email,
