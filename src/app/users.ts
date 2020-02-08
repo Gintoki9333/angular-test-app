@@ -13,8 +13,7 @@ export class User {
     this.email = email;
     this.password = password;
     this.confirmPassword = confirmPassword;
-    const newGroups = groups.map(e => Object.assign({value: false}, e));
-    this.groupMemb = newGroups;
+    this.groupMemb = groups.map(e => Object.assign({value: false}, e));
     this.userPrms = [
       { name: 'View Dashboards', value: false },
       { name: 'Edit Dashboards', value: false },

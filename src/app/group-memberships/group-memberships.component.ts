@@ -13,5 +13,9 @@ export class GroupMembershipsComponent {
   clickCheckbox(name) {
     const g = this.currUser.groupMemb.find(e => e.name === name);
     g.value = !g.value;
+
+    Object.assign(this.currUser.groupMemb, g.value.effectivePrms);
+    console.log(this.currUser.groupMemb);
+
   }
 }

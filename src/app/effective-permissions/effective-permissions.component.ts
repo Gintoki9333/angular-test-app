@@ -10,8 +10,6 @@ export class EffectivePermissionsComponent {
 
   @Input() currGroup: Group;
 
-  constructor() {}
-
   clickCheckbox(name) {
     const g = this.currGroup.effectivePrms.find(e => e.name === name);
     g.value = !g.value;

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {AppUsersService} from '../users.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, Validators, FormBuilder} from '@angular/forms';
 import { User} from '../users';
-import { Group } from '../groups';
+import {Group} from '../groups';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,9 +11,16 @@ import { Group } from '../groups';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(public appUsersService: AppUsersService) {}
+  constructor(public appUsersService: AppUsersService,
+              public fb: FormBuilder) {}
 
-  form: FormGroup;
+  form =  this.fb.group({
+  name: [''],
+  email: [''],
+  password: [''],
+  confirmPassword: [''],
+  groupMemb: [''],
+});
 
   @Input() currUser: User;
   newUser: User = new User(null, null, null, null, null);
@@ -35,17 +42,12 @@ export class UserProfileComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl('',
-        Validators.required
-      ),
-      email: new FormControl('',
-        Validators.email),
-      password: new FormControl(null,
-        Validators.minLength(8),
-      ),
-      confirmPassword: new FormControl(null,
-        Validators.minLength(8)),
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.email],
+      password: [null,  Validators.minLength(8)],
+      confirmPassword: [null,  Validators.minLength(8)],
+      groupMemb: [this.currUser ? this.currUser.groupMemb : this.newUser.groupMemb],
     });
   }
 }

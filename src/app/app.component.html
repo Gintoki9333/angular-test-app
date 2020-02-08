@@ -1,7 +1,7 @@
 <app-top-panel class="top-panel" [currUser] = "selectedUser" [currGroup]="selectedGroup"></app-top-panel>
 <div class="container">
   <div class="users-and-groups">
-  <app-local-users class="local-users"(onSelectedUser)="handlerUser($event)"></app-local-users>
+  <app-local-users class="local-users" (onSelectedUser)="handlerUser($event)"></app-local-users>
   <app-local-groups class="local-groups" (onSelectedGroup)="handlerGroup($event)"></app-local-groups>
   </div>
   <app-user-profile class="user-profile" [currUser] = "selectedUser" [currGroup]="selectedGroup"></app-user-profile>

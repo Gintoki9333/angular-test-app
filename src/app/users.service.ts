@@ -13,6 +13,10 @@ export class AppUsersService {
     new User('Admin', 'admin@mail.ru')
   ];
 
+  public newUsersArray = this.users.map(person => {
+    return person;
+  });
+
   public addNewUser(data: User) {
       this.users.push({
         name: data.name,

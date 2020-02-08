@@ -17,5 +17,4 @@ export class LocalGroupsComponent{
     this.selectedGroup = group;
     this.onSelectedGroup.emit(this.selectedGroup);
   }
-
 }
