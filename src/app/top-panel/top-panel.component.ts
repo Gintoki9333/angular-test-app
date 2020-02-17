@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Group, addNewGroup, deleteGroup, groups} from '../groups';
+import {Group, addNewGroup, deleteGroup} from '../groups';
 import {User} from '../users';
 import {AppUsersService} from '../users.service';
 

@@ -1,7 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {AppUsersService} from '../users.service';
-import { FormControl, Validators, FormBuilder} from '@angular/forms';
-import { User} from '../users';
+import {Validators, FormBuilder} from '@angular/forms';
+import {User} from '../users';
 import {Group} from '../groups';
 
 @Component({
@@ -9,7 +9,7 @@ import {Group} from '../groups';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent implements OnInit, OnChanges{
 
   constructor(public appUsersService: AppUsersService,
               public fb: FormBuilder) {}
@@ -27,6 +27,14 @@ export class UserProfileComponent implements OnInit {
   @Input() currGroup: Group;
   newGroup: Group = new Group(null);
 
+  public user: User;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('currUser' in changes) {
+      this.user = this.currUser || this.newUser;
+    }
+  }
+
   addUser() {
     if (this.form.valid) {
       console.log('Form: ', this.form);
@@ -39,15 +47,20 @@ export class UserProfileComponent implements OnInit {
 
   clear() {
       this.form.reset();
+      // this.currUser = null;
+      this.user = this.newUser;
     }
 
   ngOnInit() {
+    this.user = this.currUser || this.newUser;
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.email],
-      password: [null,  Validators.minLength(8)],
-      confirmPassword: [null,  Validators.minLength(8)],
-      groupMemb: [this.currUser ? this.currUser.groupMemb : this.newUser.groupMemb],
+      name: [this.user.name, Validators.required],
+      email: [this.user.email, Validators.email],
+      password: [this.user.password,  Validators.minLength(8)],
+      confirmPassword: [this.user.password,  Validators.minLength(8)],
+      groupMemb: [this.user.groupMemb],
     });
   }
 }
+
+
