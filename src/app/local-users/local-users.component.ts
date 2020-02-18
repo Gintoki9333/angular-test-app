@@ -1,7 +1,6 @@
 import {Component, Output, EventEmitter} from '@angular/core';
 import {User} from '../users';
 import {AppUsersService} from '../users.service';
-import {style} from '@angular/animations';
 
 @Component({
   selector: 'app-local-users',

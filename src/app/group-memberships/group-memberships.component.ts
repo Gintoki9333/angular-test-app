@@ -9,6 +9,7 @@ import {User} from '../users';
 export class GroupMembershipsComponent implements OnChanges {
 
   @Input() currUser: User;
+  public user: User;
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('groupMemb', this.currUser.groupMemb);

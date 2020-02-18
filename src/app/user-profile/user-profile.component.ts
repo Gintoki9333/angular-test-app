@@ -1,6 +1,6 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {AppUsersService} from '../users.service';
-import {Validators, FormBuilder} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {User} from '../users';
 import {Group} from '../groups';
 
@@ -9,18 +9,12 @@ import {Group} from '../groups';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit, OnChanges{
+export class UserProfileComponent implements OnChanges {
 
   constructor(public appUsersService: AppUsersService,
               public fb: FormBuilder) {}
 
-  form =  this.fb.group({
-  name: [''],
-  email: [''],
-  password: [''],
-  confirmPassword: [''],
-  groupMemb: [''],
-});
+  form: FormGroup;
 
   @Input() currUser: User;
   newUser: User = new User(null, null, null, null, null);
@@ -32,6 +26,13 @@ export class UserProfileComponent implements OnInit, OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     if ('currUser' in changes) {
       this.user = this.currUser || this.newUser;
+      this.form = this.fb.group({
+        name: [this.user.name, Validators.required],
+        email: [this.user.email, Validators.email],
+        password: [this.user.password,  Validators.minLength(8)],
+        confirmPassword: [this.user.password,  Validators.minLength(8)],
+        groupMemb: [this.user.groupMemb],
+      });
     }
   }
 
@@ -50,17 +51,6 @@ export class UserProfileComponent implements OnInit, OnChanges{
       // this.currUser = null;
       this.user = this.newUser;
     }
-
-  ngOnInit() {
-    this.user = this.currUser || this.newUser;
-    this.form = this.fb.group({
-      name: [this.user.name, Validators.required],
-      email: [this.user.email, Validators.email],
-      password: [this.user.password,  Validators.minLength(8)],
-      confirmPassword: [this.user.password,  Validators.minLength(8)],
-      groupMemb: [this.user.groupMemb],
-    });
-  }
 }
 
 

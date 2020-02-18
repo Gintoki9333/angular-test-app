@@ -6,10 +6,8 @@ import { User } from '../users';
   templateUrl: './user-permissions.component.html',
   styleUrls: ['./user-permissions.component.scss']
 })
-export class UserPermissionsComponent{
+export class UserPermissionsComponent {
   @Input() currUser: User;
-
-  constructor() {}
 
   clickCheckbox(name) {
     const u = this.currUser.userPrms.find(e => e.name === name);

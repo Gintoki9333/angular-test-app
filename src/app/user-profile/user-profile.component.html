@@ -13,12 +13,10 @@
         <div class="nameEmail">
           <div class="form-group">
             <input id="name" placeholder="Login Name" formControlName="name"
-                   [value]="currUser ? currUser.name || '' : newUser.name"
             />
           </div>
           <div class="form-group">
             <input type="any" placeholder="Email" formControlName="email"
-              [value]="currUser ? currUser.email || '' : newUser.email"
             />
           </div>
         </div>
@@ -26,12 +24,10 @@
           <div class="password">
           <div class="form-group">
             <input type="any" placeholder="Password" formControlName="password"
-              [value]="currUser ? currUser.password || '' : newUser.password"
             />
           </div>
           <div class="form-group">
             <input type="any" placeholder="Confirm password" formControlName="confirmPassword"
-              [value]="currUser ? currUser.confirmPassword || '' : newUser.confirmPassword"
             />
           </div>
           </div>

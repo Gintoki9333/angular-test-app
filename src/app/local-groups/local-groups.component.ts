@@ -9,8 +9,8 @@ import {Group, groups} from '../groups';
 export class LocalGroupsComponent{
 
   groups = groups;
-  @Output() onSelectedGroup = new EventEmitter();
   selectedGroup: Group;
+  @Output() onSelectedGroup = new EventEmitter();
 
   setSelectedGroup(group) {
     console.log('get group', group);
